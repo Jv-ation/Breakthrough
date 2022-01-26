@@ -1,0 +1,18 @@
+digraph "classes" {
+rankdir=BT
+charset="utf-8"
+"breakthrough.Breakthrough" [color="black", fontcolor="black", label="{Breakthrough|\l|PlayGame()\l}", shape="record", style="solid"];
+"breakthrough.Card" [color="black", fontcolor="black", label="{Card|\l|GetCardNumber()\lGetDescription()\lGetScore()\lProcess(Deck, Discard, Hand, Sequence, CurrentLock, Choice, CardChoice)\l}", shape="record", style="solid"];
+"breakthrough.CardCollection" [color="black", fontcolor="black", label="{CardCollection|\l|AddCard(C)\lGetCardDescriptionAt(X)\lGetCardDisplay()\lGetCardNumberAt(X)\lGetName()\lGetNumberOfCards()\lRemoveCard(CardNumber)\lShuffle()\l}", shape="record", style="solid"];
+"breakthrough.Challenge" [color="black", fontcolor="black", label="{Challenge|\l|GetCondition()\lGetMet()\lSetCondition(NewCondition)\lSetMet(NewValue)\l}", shape="record", style="solid"];
+"breakthrough.DifficultyCard" [color="black", fontcolor="black", label="{DifficultyCard|\l|GetDescription()\lProcess(Deck, Discard, Hand, Sequence, CurrentLock, Choice, CardChoice)\l}", shape="record", style="solid"];
+"breakthrough.Lock" [color="black", fontcolor="black", label="{Lock|\l|AddChallenge(Condition)\lCheckIfConditionMet(Sequence)\lGetChallengeMet(Pos)\lGetLockDetails()\lGetLockSolved()\lGetNumberOfChallenges()\lSetChallengeMet(Pos, Value)\l}", shape="record", style="solid"];
+"breakthrough.ToolCard" [color="black", fontcolor="black", label="{ToolCard|\l|GetDescription()\l}", shape="record", style="solid"];
+"breakthrough.DifficultyCard" -> "breakthrough.Card" [arrowhead="empty", arrowtail="none"];
+"breakthrough.ToolCard" -> "breakthrough.Card" [arrowhead="empty", arrowtail="none"];
+"breakthrough.CardCollection" -> "breakthrough.Breakthrough" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="__Deck", style="solid"];
+"breakthrough.CardCollection" -> "breakthrough.Breakthrough" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="__Hand", style="solid"];
+"breakthrough.CardCollection" -> "breakthrough.Breakthrough" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="__Sequence", style="solid"];
+"breakthrough.CardCollection" -> "breakthrough.Breakthrough" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="__Discard", style="solid"];
+"breakthrough.Lock" -> "breakthrough.Breakthrough" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="__CurrentLock", style="solid"];
+}
